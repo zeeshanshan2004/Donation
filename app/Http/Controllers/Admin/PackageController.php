@@ -25,6 +25,13 @@ class PackageController extends Controller
         return view('admin.packages.create');
     }
 
+    public function show(Package $package)
+    {
+        $buyers = $package->orders()->with('user')->latest()->paginate(15);
+        $allPackages = Package::orderBy('name')->get();
+        return view('admin.packages.show', compact('package', 'buyers', 'allPackages'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */

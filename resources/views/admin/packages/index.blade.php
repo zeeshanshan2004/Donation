@@ -57,8 +57,7 @@
                                 <td>
                                     <a href="{{ route('admin.packages.edit', $package->id) }}"
                                         class="btn btn-dark btn-xs">Edit</a>
-                                        <a href="{{ route('admin.packages.destroy', $package->id) }}"
-                                        class="btn btn-dark btn-xs">View</a>
+                                        <a href="{{ route('admin.packages.show', $package->id) }}" class="btn btn-dark btn-xs">View</a>
                                     <form action="{{ route('admin.packages.destroy', $package->id) }}" method="POST"
                                         class="d-inline">
                                         @csrf @method('DELETE')
