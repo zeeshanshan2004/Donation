@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Chat Testing</title>
+    <style>
+        #chatBox {
+            border:1px solid #ccc;
+            padding:10px;
+            height:300px;
+            overflow-y:scroll;
+        }
+        .msg-admin { color: blue; }
+        .msg-user { color: green; }
+    </style>
+</head>
+<body>
+    <h2>User Chat Testing</h2>
+    JWT Token: <input type="text" id="token" value="PASTE_YOUR_TOKEN_HERE" style="width:400px;"><br><br>
+
+    <div id="chatBox"></div>
+    <input type="text" id="message" placeholder="Type message..." style="width:300px;">
+    <button id="sendBtn">Send</button>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const messageInput = document.getElementById('message');
+        const sendBtn = document.getElementById('sendBtn');
+        const tokenInput = document.getElementById('token');
+
+        const adminId = 1; // Admin ID (for testing)
+
+        // Fetch all chat messages with admin
+        async function fetchMessages(){
+            const res = await fetch(`/api/chat/${adminId}`, {
+                headers: { 'Authorization': 'Bearer ' + tokenInput.value }
+            });
+            const data = await res.json();
+
+            chatBox.innerHTML = '';
+            if(data.status && data.data.length){
+                data.data.forEach(msg => {
+                    let sender = msg.sender.name;
+                    let cls = msg.sender_id == adminId ? 'msg-admin' : 'msg-user';
+                    chatBox.innerHTML += `<span class="${cls}"><b>${sender}:</b> ${msg.message}</span><br>`;
+                });
+            } else {
+                chatBox.innerHTML = 'No messages yet';
+            }
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Send message to admin
+        sendBtn.addEventListener('click', async () => {
+            const message = messageInput.value.trim();
+            if(!message) return;
+
+            await fetch('/api/chat/send', {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'Authorization':'Bearer ' + tokenInput.value
+                },
+                body: JSON.stringify({ message })
+            });
+            messageInput.value = '';
+            fetchMessages();
+        });
+
+        // Refresh messages every 2 seconds
+        setInterval(fetchMessages, 2000);
+
+        // Initial fetch
+        fetchMessages();
+    </script>
+    
+</body>
+</html>

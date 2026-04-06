@@ -1,0 +1,27 @@
+[24-Nov-2025 19:04:32 UTC] PHP Warning:  require(/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/check/public_html/Kelsie-Lichtenfeld/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:34 UTC] PHP Warning:  require(/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/check/public_html/Kelsie-Lichtenfeld/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:40 UTC] PHP Warning:  require(/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/check/public_html/Kelsie-Lichtenfeld/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:56 UTC] PHP Warning:  require(/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:04:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/check/public_html/Kelsie-Lichtenfeld/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/check/public_html/Kelsie-Lichtenfeld/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/check/public_html/Kelsie-Lichtenfeld/index.php on line 34
+[24-Nov-2025 19:06:17 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.29. in /home/check/public_html/Kelsie-Lichtenfeld/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/check/public_html/Kelsie-Lichtenfeld/vendor/composer/autoload_real.php(25): require()
+#1 /home/check/public_html/Kelsie-Lichtenfeld/vendor/autoload.php(22): ComposerAutoloaderInitc5bf2b6deb4e783a5cb3be1078b335dc::getLoader()
+#2 /home/check/public_html/Kelsie-Lichtenfeld/index.php(34): require('/home/check/pub...')
+#3 {main}
+  thrown in /home/check/public_html/Kelsie-Lichtenfeld/vendor/composer/platform_check.php on line 22

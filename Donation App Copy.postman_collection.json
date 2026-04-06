@@ -1,0 +1,1116 @@
+{
+  "info": {
+    "_postman_id": "7c976085-308d-49d8-a106-df587046a563",
+    "name": "Donation App Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48005032",
+    "_collection_link": "https://go.postman.co/collection/48005032-7c976085-308d-49d8-a106-df587046a563?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ChatSupport",
+      "item": [
+        {
+          "name": "Chat History",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjM2NzkwNTMsImV4cCI6MTc2MzY4MjY1MywibmJmIjoxNzYzNjc5MDUzLCJqdGkiOiIwaktweFJ6b0FTckdJNmNzIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vJ8_Ju70OsNkVtAUjBoLVCq7VMCukFXv8I3k1HkLhjk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/chat/messages/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "chat",
+                "messages",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send Message API",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NoZWNreW91cnByb2plY3QuaW5mby9LZWxzaWUtTGljaHRlbmZlbGQvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjQwMTY3NjQsImV4cCI6MTc2NDAyMDM2NCwibmJmIjoxNzY0MDE2NzY0LCJqdGkiOiJqVkU5NXpYU2lkZkZVRzhTIiwic3ViIjoiNSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.g8i_FKdi71XFA9pre_N5I8aTyFjnJLxvwbc88wHo8cA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"receiver_id\": 1,\r\n  \"message\": \"Hello, how are you?\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/chat/send",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "chat",
+                "send"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total Unread Count",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjM0MTMyNDksImV4cCI6MTc2MzQxNjg0OSwibmJmIjoxNzYzNDEzMjQ5LCJqdGkiOiJEbzdNTFoxNmxQVndKQUNDIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Wr8401ONyrmWx88kE5y2Un20I6A6VYSvx05SyWgO5Hs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fcm_token\": \"3423423534564\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/save-fcm-token",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "save-fcm-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.5.0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"tofil\",\n  \"email\": \"tofil123@gmail.com\",\n  \"password\": \"123456\",\n  \"password_confirmation\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/register",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify OTP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"c@gmail.com\",\r\n  \"otp\": 6672\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/verify-otp",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "verify-otp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirm Payment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc3MzY5ODk1MywiZXhwIjoxNzczNzAyNTUzLCJuYmYiOjE3NzM2OTg5NTMsImp0aSI6Im5yaTJGcmRWMVBpTFFRdFQiLCJzdWIiOiIzNiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.L17coUDUtraA75NhtWyBJnKZn4Mwr__R62d5mi53UJM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"transaction_id\": \"TRANS-123456\" \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/confirm-payment",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "confirm-payment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"c@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/login",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "KYC Submit",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzM2OTkxMDgsImV4cCI6MTc3MzcwMjcwOCwibmJmIjoxNzczNjk5MTA4LCJqdGkiOiI4dUJjNHRCTUtOaFoyRTlUIiwic3ViIjoiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Hwxy66wk0q_GGqZ-azyMH-98vwR-HMCCdmlnSLBRs9o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "country_of_residence",
+              "value": "pk",
+              "type": "text",
+              "uuid": "20e99cb7-e7e5-4db8-bf9a-0ff6162cfcdb"
+            },
+            {
+              "key": "full_legal_name",
+              "value": "tofil1231111q",
+              "type": "text",
+              "uuid": "1489589f-165b-4caa-8415-fe07f9f07675"
+            },
+            {
+              "key": "date_of_birth",
+              "value": "12/12/12",
+              "type": "text",
+              "uuid": "b6f31236-e037-4a3c-a8b3-3355f16e547c"
+            },
+            {
+              "key": "residential_address",
+              "value": "NY",
+              "type": "text",
+              "uuid": "0fd48e2a-11f2-4ed1-ac6c-db5ff3f43ccd"
+            },
+            {
+              "key": "photo_id_type",
+              "value": "passport",
+              "type": "text",
+              "uuid": "9547f183-3eec-4a8a-8179-c0f9db564198"
+            },
+            {
+              "key": "photo_id",
+              "type": "file",
+              "uuid": "3fe41a18-364c-4ef7-9401-68f89c735667",
+              "src": "/C:/Users/Staffshaw/Desktop/360_F_159786506_DBq2ev6ZLa03ey7AM5QYxubClvgO7zcB.jpg"
+            },
+            {
+              "key": "face_photo",
+              "type": "file",
+              "uuid": "01a14bc3-f876-4e94-ae65-3071360b18d8",
+              "src": "/C:/Users/Staffshaw/Desktop/360_F_159786506_DBq2ev6ZLa03ey7AM5QYxubClvgO7zcB.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/kyc/submit-details",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "kyc",
+            "submit-details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirm Agreement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzM2OTkxMDgsImV4cCI6MTc3MzcwMjcwOCwibmJmIjoxNzczNjk5MTA4LCJqdGkiOiI4dUJjNHRCTUtOaFoyRTlUIiwic3ViIjoiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Hwxy66wk0q_GGqZ-azyMH-98vwR-HMCCdmlnSLBRs9o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "agreement_file",
+              "type": "file",
+              "uuid": "813fc0c7-0e58-4442-84c1-8fef2673868a",
+              "src": "/C:/Users/Staffshaw/Desktop/360_F_159786506_DBq2ev6ZLa03ey7AM5QYxubClvgO7zcB.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{localhost}}/api/auth/kyc/confirm-agreement",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "kyc",
+            "confirm-agreement"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Change Password",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NoZWNreW91cnByb2plY3QuaW5mby9LZWxzaWUtTGljaHRlbmZlbGQvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc2NTkyNzQ5MiwiZXhwIjoxNzY1OTMxMDkyLCJuYmYiOjE3NjU5Mjc0OTIsImp0aSI6IlFVUVZGNmJXYXdHMkdWZDQiLCJzdWIiOiIyMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RdTa-Sy1q2Np3oI9QsVd88SOh4_q71oMPv6SIq6V9jQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"current_password\": \"dawikom396@merumart.com\",\r\n  \"new_password\": \"123456\",\r\n  \"new_password_confirmation\": \"12345678\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/change-password",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "change-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjE5NDk0NjksImV4cCI6MTc2MTk1MzA2OSwibmJmIjoxNzYxOTQ5NDY5LCJqdGkiOiJnZmVWM08wYTRTaDV4enl4Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.JEghrvh-nsySG8ZuJCsxyHn6nkMsFMzYdlZplaYkh3M",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{localhost}}/api/auth/profile",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Faq",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc1ODA1ODgxNywiZXhwIjoxNzU4MDYyNDE3LCJuYmYiOjE3NTgwNTg4MTcsImp0aSI6Ims1ZFh3NlY1VWxuMTVIdUUiLCJzdWIiOiIxNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ud5lxSU_foZT7T-b5mwrn-kV-lDfU-Lp8uSEkRGyu0o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{localhost}}/api/faqs",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "faqs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Causes",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjIxOTUzMDYsImV4cCI6MTc2MjE5ODkwNiwibmJmIjoxNzYyMTk1MzA2LCJqdGkiOiI1a0Yxb1pzTkxTWWFnSjlGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.7iZdCaTrc3tpZidx19qur1hQ5iAqWpONLHEX8pqxOKk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{localhost}}api/causes",
+          "host": [
+            "{{localhost}}api"
+          ],
+          "path": [
+            "causes"
+          ],
+          "query": [
+            {
+              "key": "featured",
+              "value": "true",
+              "disabled": true
+            },
+            {
+              "key": "category_id",
+              "value": "15",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "notification settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NoZWNreW91cnByb2plY3QuaW5mby9LZWxzaWUtTGljaHRlbmZlbGQvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjYxNjYxMDQsImV4cCI6MTc2NjE2OTcwNCwibmJmIjoxNzY2MTY2MTA0LCJqdGkiOiJUekFZd0hnV0wxeW1lZllMIiwic3ViIjoiMjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.opphxD-eYCkayUxxGwc5aQvLRcvX44WXpdBVh-0iCT0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//   \"email_notifications\":  true,\r\n//   \"push_notifications\": false,\r\n//   \"special_announcements\": false,\r\n//   \"blessing_updates\": false,\r\n//   \"community_announcements\": false\r\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/notification-settings",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "notification-settings"
+          ],
+          "query": [
+            {
+              "key": "category_id",
+              "value": "3",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Causes/id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc1ODA1ODgxNywiZXhwIjoxNzU4MDYyNDE3LCJuYmYiOjE3NTgwNTg4MTcsImp0aSI6Ims1ZFh3NlY1VWxuMTVIdUUiLCJzdWIiOiIxNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ud5lxSU_foZT7T-b5mwrn-kV-lDfU-Lp8uSEkRGyu0o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{localhost}}/api/causes/19",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "causes",
+            "19"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Categories",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc1ODA1ODgxNywiZXhwIjoxNzU4MDYyNDE3LCJuYmYiOjE3NTgwNTg4MTcsImp0aSI6Ims1ZFh3NlY1VWxuMTVIdUUiLCJzdWIiOiIxNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ud5lxSU_foZT7T-b5mwrn-kV-lDfU-Lp8uSEkRGyu0o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{base_url}}/api/categories",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TermCondition",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc1ODA1ODgxNywiZXhwIjoxNzU4MDYyNDE3LCJuYmYiOjE3NTgwNTg4MTcsImp0aSI6Ims1ZFh3NlY1VWxuMTVIdUUiLCJzdWIiOiIxNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ud5lxSU_foZT7T-b5mwrn-kV-lDfU-Lp8uSEkRGyu0o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{base_url}}/api/terms",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "terms"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjA5OTYxNzksImV4cCI6MTc2MDk5OTc3OSwibmJmIjoxNzYwOTk2MTc5LCJqdGkiOiJ0NXlHUGJhVWdidVFsWXl5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QsAMdTxMW63lqjilfbqQmT_sSV96f6vp3MV66jtP_74",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Usama Ahmed\",\r\n  \"nickname\": \"Usy\",\r\n  \"country\": \"Pakistan\",\r\n  \"gender\": \"male\",\r\n  \"phone\":\"4235353453\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/update-profile",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "update-profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "chat test",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjM2Nzg1ODEsImV4cCI6MTc2MzY4MjE4MSwibmJmIjoxNzYzNjc4NTgxLCJqdGkiOiJMcUluaURPTWdycHE3SlVQIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.XfMEOqPqUzk90r0B_LW2jj3E82radMph2pSsNuSuoH0",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    receiver_id: 1,\r\n    message: \"sadasd\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/chat/send",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "chat",
+            "send"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LW90cCIsImlhdCI6MTc1ODA1ODgxNywiZXhwIjoxNzU4MDYyNDE3LCJuYmYiOjE3NTgwNTg4MTcsImp0aSI6Ims1ZFh3NlY1VWxuMTVIdUUiLCJzdWIiOiIxNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ud5lxSU_foZT7T-b5mwrn-kV-lDfU-Lp8uSEkRGyu0o",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/auth/logout",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Forgot Reset",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"dawikom396@merumart.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/forgot-password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "forgot-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Password-Reset OTP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"dawikom396@merumart.com\",\r\n  \"otp\": 7211\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/verify-forgot-otp",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "verify-forgot-otp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Password Reset",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvdmVyaWZ5LWZvcmdvdC1vdHAiLCJpYXQiOjE3NTgwNjEzODYsImV4cCI6MTc1ODA2NDk4NiwibmJmIjoxNzU4MDYxMzg2LCJqdGkiOiJFVTVPZlBSQ1ZsaDVwa1BIIiwic3ViIjoiMTQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.q4AmBoWj11-Rb8YlYFRHQ1pMJkkPEfuy8MEPz2zQGvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"password\": \"newpassword123\",\r\n  \"l\": \"newpassword123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/reset-password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "reset-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Donation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3Njc4OTc2NjAsImV4cCI6MTc2NzkwMTI2MCwibmJmIjoxNzY3ODk3NjYwLCJqdGkiOiJSbXJzSE04SkhXaEFpdTA5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.SLcaGp3QxgQnPlEFuuZ6WU3SplWYDlZYsUnoQ9RZ0RA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3Njc4MzE1NjMsImV4cCI6MTc2NzgzNTE2MywibmJmIjoxNzY3ODMxNTYzLCJqdGkiOiJZdWhzdjVVVENTc0N4cFByIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OYbgbjUjEAX2Ng7-XZpo8O5TzqkjrQFvL9vR8jQgCZk",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cause_id\": 19,\r\n    \"amount\": 5000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/donations/create-intent",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "donations",
+            "create-intent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Donation History",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3Njc4OTc2NjAsImV4cCI6MTc2NzkwMTI2MCwibmJmIjoxNzY3ODk3NjYwLCJqdGkiOiJSbXJzSE04SkhXaEFpdTA5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.SLcaGp3QxgQnPlEFuuZ6WU3SplWYDlZYsUnoQ9RZ0RA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3Njc4MzE1NjMsImV4cCI6MTc2NzgzNTE2MywibmJmIjoxNzY3ODMxNTYzLCJqdGkiOiJZdWhzdjVVVENTc0N4cFByIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OYbgbjUjEAX2Ng7-XZpo8O5TzqkjrQFvL9vR8jQgCZk",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/donations",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "donations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dashboard Reports",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3Njc5MTcxOTIsImV4cCI6MTc2NzkyMDc5MiwibmJmIjoxNzY3OTE3MTkyLCJqdGkiOiJEMmNlb0U0S3NjcWRNSFJhIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Np2HEAaRqJKBPUHJEZFy_itq8fEMoSce-p225sc_9IE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/reports/dashboard",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "reports",
+            "dashboard"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Packages",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Package by id",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "localhost",
+      "value": ""
+    },
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
