@@ -106,14 +106,17 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/reports/dashboard', [App\Http\Controllers\API\ReportController::class, 'index']);
 });
 
-// ✅ Packages API (Public)
-Route::get('/packages', [App\Http\Controllers\Api\PackageController::class, 'index']);
-Route::get('/packages/{id}', [App\Http\Controllers\Api\PackageController::class, 'show']);
+//  Packages & Flowchart API (Public)
+
+Route::get('packages', [App\Http\Controllers\API\PackageController::class, 'index']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/packages/subscribe', [App\Http\Controllers\API\PackageOrderController::class, 'subscribe']);
     Route::get('/packages/my-orders', [App\Http\Controllers\API\PackageOrderController::class, 'myOrders']);
+Route::get('/packages/dashboard', [App\Http\Controllers\API\PackageOrderController::class, 'index']);
 });
 
 
-Route::get('/Dashboard', [App\Http\Controllers\Api\DashboardController::class, 'show']);
+
+// Route::get('/packages/{id}', [App\Http\Controllers\API\PackageController::class, 'show']);
+//  Dashboard

@@ -21,7 +21,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="table-light">
                         <tr>
-                            
+                               <th>Icon</th>
                             <th>ID</th>
                             <th>Package Name</th>
                             <th>Pkg Amount</th>
@@ -33,14 +33,23 @@
                             <th>Your Payout</th>
                             <th>Status</th>
                             <th>Actions</th>
-                            <th>Icon</th>
+                         
                       
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($packages as $package)
+
                             <tr>
+                                
                                 <td>{{ $package->id }}</td>
+                                                              <td>
+    @if($package->icon)
+        <img src="{{ asset('storage/' . $package->icon) }}" alt="icon" width="40" height="40" style="border-radius:5px; object-fit:cover; border:1px solid #ddd;">
+    @else
+        <span class="badge bg-secondary">No Icon</span>
+    @endif
+</td>   
                                 <td>{{ $package->name }}</td>
                                 <td>{{ number_format($package->amount, 2) }}</td>
                                 <td>{{ $package->referral_required }}</td>
@@ -54,6 +63,7 @@
                                         {{ $package->status ? 'Active' : 'Inactive' }}
                                     </span>
                                 </td>
+   
                                 <td>
                                     <a href="{{ route('admin.packages.edit', $package->id) }}"
                                         class="btn btn-dark btn-xs">Edit</a>
@@ -65,13 +75,7 @@
                                             onclick="return confirm('Delete this package?')">Delete</button>
                                     </form>
                                 </td>
-<td>
-    @if($package->icon)
-        <img src="{{ asset('storage/' . $package->icon) }}" alt="icon" width="40" height="40" style="border-radius:5px; object-fit:cover; border:1px solid #ddd;">
-    @else
-        <span class="badge bg-secondary">No Icon</span>
-    @endif
-</td>               </tr>
+          </tr>
                         @endforeach
                     </tbody>
                 </table>

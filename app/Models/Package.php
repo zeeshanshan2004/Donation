@@ -31,8 +31,9 @@ protected $fillable = ['name', 'amount', 'referral_required', 'tax_percentage', 
         return round($this->total_collected - $this->tax - $this->community_share, 2);
     }
 
-    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(\App\Models\PackageOrder::class, 'package_id');
-    }
+  public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
+{
+    return $this->hasMany(\App\Models\PackageOrder::class, 'package_id');
+}
+
 }
